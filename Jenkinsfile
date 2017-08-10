@@ -8,6 +8,7 @@ node {
    }
 	stage('Build Docker image') {
 //			sh 'docker build -t ca-app .'
+			sh 'ls'
 			sh 'make_docker_image.sh'
 	}
 	stage('Test app') {
