@@ -14,4 +14,9 @@ node {
 		sh 'docker run --rm -t ca-app python tests.py'
 	}
 
+/*
+	stage('Publish docker image') {
+		sh 'echo "not implemented"'
+	}
+*/
 }
