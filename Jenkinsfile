@@ -6,11 +6,11 @@ node {
       git credentialsId: 'jenkins_key', url: 'git@github.com:SaGodinho/ca-project.git'
 
    }
-	stage('Build') {
+	stage('Build Docker image') {
 			sh 'echo hello world'
 			sh 'docker build -t ca-app .'
 	}
-	stage('Test') {
+	stage('Test app') {
 		sh 'docker run --rm -t ca-app python tests.py'
 	}
 
