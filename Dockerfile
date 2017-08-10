@@ -14,3 +14,6 @@ RUN pip install -r /app/requirements.txt
 
 # Command for starting our app
 CMD python run.py
+
+# The app runs on port 5000
+EXPOSE 5000
