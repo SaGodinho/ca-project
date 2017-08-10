@@ -12,7 +12,10 @@ node {
 	}
 	stage('Test app') {
 //		sh 'docker run --rm -t ca-app python tests.py'
-		sh 'sh run_tests.sh'
+//		sh 'sh run_tests.sh'
+		withDockerContainer('maven:3-jdk-8'){
+			sh 'sh run_tests.sh'
+		}
 	}
 
 /*
