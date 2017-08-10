@@ -20,4 +20,8 @@ node {
 		sh 'echo "not implemented"'
 	}
 */
+
+	stage('Deploy to production'){
+		sh 'sh deploy_to_production.sh'
+	}
 }
