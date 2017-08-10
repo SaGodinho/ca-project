@@ -16,6 +16,7 @@ node {
 		withDockerContainer('ca-app'){
 			sh 'sh -x run_tests.sh'
 		}
+		junit 'test-reports/TEST-*.xml'
 	}
 
 /*
