@@ -7,11 +7,14 @@ node {
 
    }
 	stage('Test') {
-		sh 'python tests.py'
+		sh 'docker run --rm -t ca-app python tests.py'
 	}
 	stage('Build') {
 			sh 'echo hello world'
 			sh 'docker build -t ca-app .'
-
 	}
+	stage('Test') {
+		sh 'docker run --rm -t ca-app python tests.py'
+	}
+
 }
