@@ -11,7 +11,8 @@ node {
 			sh 'sh make_docker_image.sh'
 	}
 	stage('Test app') {
-		sh 'docker run --rm -t ca-app python tests.py'
+//		sh 'docker run --rm -t ca-app python tests.py'
+		sh 'sh run_tests.sh'
 	}
 
 /*
