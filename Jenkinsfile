@@ -8,13 +8,13 @@ node {
    }
 	stage('Build Docker image') {
 //			sh 'docker build -t ca-app .'
-			sh 'sh make_docker_image.sh'
+			sh 'sh -x make_docker_image.sh'
 	}
 	stage('Test app') {
 //		sh 'docker run --rm -t ca-app python tests.py'
 //		sh 'sh run_tests.sh'
 		withDockerContainer('maven:3-jdk-8'){
-			sh 'sh run_tests.sh'
+			sh 'sh -x run_tests.sh'
 		}
 	}
 
@@ -25,6 +25,6 @@ node {
 */
 
 	stage('Deploy to production'){
-		sh 'sh deploy_to_production.sh'
+		sh 'sh -x deploy_to_production.sh'
 	}
 }
