@@ -17,3 +17,5 @@ CMD python run.py
 
 # The app runs on port 5000
 EXPOSE 5000
+
+VOLUME /app/database_storage
